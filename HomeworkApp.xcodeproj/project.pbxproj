@@ -10,6 +10,8 @@
 		6A303A8C21BDAEBA0061FF82 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A303A8B21BDAEBA0061FF82 /* AppData.swift */; };
 		6A8A0D3E21BD21280030D203 /* Vision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8A0D3D21BD21280030D203 /* Vision.swift */; };
 		6A8A0D4021BD22EA0030D203 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A8A0D3F21BD22EA0030D203 /* SwiftyJSON.framework */; };
+		9D5B70EB21BDDB4900886B5E /* Results.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D5B70EA21BDDB4900886B5E /* Results.storyboard */; };
+		9D5B70ED21BDDBEC00886B5E /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5B70EC21BDDBEC00886B5E /* ResultsViewController.swift */; };
 		9D85C6667686108CE56519AF /* Pods_HomeworkApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B35144F1FE9C3DAF8C429D8F /* Pods_HomeworkApp.framework */; };
 		FE83054121BC73FB008BF111 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE83054021BC73FB008BF111 /* AppDelegate.swift */; };
 		FE83054321BC73FB008BF111 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE83054221BC73FB008BF111 /* ViewController.swift */; };
@@ -24,6 +26,8 @@
 		6A8A0D3D21BD21280030D203 /* Vision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vision.swift; sourceTree = "<group>"; };
 		6A8A0D3F21BD22EA0030D203 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FD70F2453A11A98D70A9CF8 /* Pods-HomeworkApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeworkApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-HomeworkApp/Pods-HomeworkApp.release.xcconfig"; sourceTree = "<group>"; };
+		9D5B70EA21BDDB4900886B5E /* Results.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Results.storyboard; sourceTree = "<group>"; };
+		9D5B70EC21BDDBEC00886B5E /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		B35144F1FE9C3DAF8C429D8F /* Pods_HomeworkApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeworkApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE83053D21BC73FB008BF111 /* HomeworkApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeworkApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE83054021BC73FB008BF111 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +93,8 @@
 				FE83054021BC73FB008BF111 /* AppDelegate.swift */,
 				FE83054221BC73FB008BF111 /* ViewController.swift */,
 				6A8A0D3D21BD21280030D203 /* Vision.swift */,
+				9D5B70EA21BDDB4900886B5E /* Results.storyboard */,
+				9D5B70EC21BDDBEC00886B5E /* ResultsViewController.swift */,
 				6A303A8B21BDAEBA0061FF82 /* AppData.swift */,
 				FE83054421BC73FB008BF111 /* Main.storyboard */,
 				FE83054721BC7400008BF111 /* Assets.xcassets */,
@@ -159,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE83054B21BC7400008BF111 /* LaunchScreen.storyboard in Resources */,
+				9D5B70EB21BDDB4900886B5E /* Results.storyboard in Resources */,
 				FE83054821BC7400008BF111 /* Assets.xcassets in Resources */,
 				FE83054621BC73FB008BF111 /* Main.storyboard in Resources */,
 			);
@@ -221,6 +228,7 @@
 				6A8A0D3E21BD21280030D203 /* Vision.swift in Sources */,
 				FE83054321BC73FB008BF111 /* ViewController.swift in Sources */,
 				FE83054121BC73FB008BF111 /* AppDelegate.swift in Sources */,
+				9D5B70ED21BDDBEC00886B5E /* ResultsViewController.swift in Sources */,
 				6A303A8C21BDAEBA0061FF82 /* AppData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
