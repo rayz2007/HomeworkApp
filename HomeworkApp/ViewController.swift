@@ -58,6 +58,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
        UIImageWriteToSavedPhotosAlbum(selectedImage, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
     }
+    
+    @IBAction func useImage(_ sender: UIButton) {
+        guard let selectedImage = imageTake.image else {
+            print("Image not found!")
+            return
+        }
+        var imageData = Vision().base64EncodeImage(selectedImage)
+        Vision().createRequest(with: imageData)
+    }
+    
     @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
         if let error = error {
             // we got back an error!
@@ -96,8 +106,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         
         imageTake.image = selectedImage
-        var imageData = Vision().base64EncodeImage(selectedImage)
-        Vision().createRequest(with: imageData)
         
     }
 
