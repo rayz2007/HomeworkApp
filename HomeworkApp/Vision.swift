@@ -14,9 +14,7 @@ class Vision: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
 
     let imagePicker = UIImagePickerController()
     let session = URLSession.shared
-    
-    var labelResults : String = ""
-    var equationsArray : [String.SubSequence] = []
+    var appdata = AppData.shared
     
     var googleAPIKey = "AIzaSyCDPi9wnspxr3yeNNQVlrU-RdGeCP8fP0g"
     var googleURL: URL {
@@ -46,7 +44,7 @@ extension Vision {
             
             // Check for errors
             if (errorObj.dictionaryValue != [:]) {
-                self.labelResults = "Error code \(errorObj["code"]): \(errorObj["message"])"
+                self.appdata.labelResults = "Error code \(errorObj["code"]): \(errorObj["message"])"
             } else {
                 // Parse the response
                 print(json)
@@ -59,7 +57,9 @@ extension Vision {
                 let numLabels: Int = labelAnnotations.count
                 var labels: Array<String> = []
                 let equations = labelAnnotations[0]["description"].stringValue
-                self.equationsArray = equations.split(separator: "\n")
+                
+                self.appdata.equationsArray = equations.split(separator: "\n")
+                
                 if numLabels > 0 {
                     var labelResultsText:String = ""
                     for index in 0..<numLabels {
@@ -74,9 +74,9 @@ extension Vision {
                             labelResultsText += "\(label)"
                         }
                     }
-                    self.labelResults = labelResultsText
+                    self.appdata.labelResults = labelResultsText
                 } else {
-                    self.labelResults = "No texts found"
+                    self.appdata.labelResults = "No texts found"
                 }
             }
         })
@@ -84,48 +84,49 @@ extension Vision {
     }
     
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let pickedImage = info[.originalImage] as? UIImage {
-
-            // Base64 encode the image and create the request
-            let binaryImageData = base64EncodeImage(pickedImage)
-            createRequest(with: binaryImageData)
-        }
-        
-        dismiss(animated: true, completion: nil)
-    }
+//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+//        if let pickedImage = info[.originalImage] as? UIImage {
+//
+//            // Base64 encode the image and create the request
+//            let binaryImageData = base64EncodeImage(pickedImage)
+//            createRequest(with: binaryImageData)
+//        }
+//
+//        dismiss(animated: true, completion: nil)
+//    }
     
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    func resizeImage(_ imageSize: CGSize, image: UIImage) -> Data {
-        UIGraphicsBeginImageContext(imageSize)
-        image.draw(in: CGRect(x: 0, y: 0, width: imageSize.width, height: imageSize.height))
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        let resizedImage = newImage!.pngData()
-        UIGraphicsEndImageContext()
-        return resizedImage!
-    }
+//    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+//        dismiss(animated: true, completion: nil)
+//    }
+//
+//    func resizeImage(_ imageSize: CGSize, image: UIImage) -> Data {
+//        UIGraphicsBeginImageContext(imageSize)
+//        image.draw(in: CGRect(x: 0, y: 0, width: imageSize.width, height: imageSize.height))
+//        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+//        let resizedImage = newImage!.pngData()
+//        UIGraphicsEndImageContext()
+//        return resizedImage!
+//    }
 }
 
 extension Vision {
-    func base64EncodeImage(_ image: UIImage) -> String {
-        var imagedata = image.pngData()
-        
-        // Resize the image if it exceeds the 2MB API limit
-        if (imagedata?.count > 2097152) {
-            let oldSize: CGSize = image.size
-            let newSize: CGSize = CGSize(width: 800, height: oldSize.height / oldSize.width * 800)
-            imagedata = resizeImage(newSize, image: image)
-        }
-        
-        return imagedata!.base64EncodedString(options: .endLineWithCarriageReturn)
-    }
+//    func base64EncodeImage(_ image: UIImage) -> String {
+//        var imagedata = image.pngData()
+//
+//        // Resize the image if it exceeds the 2MB API limit
+//        if (imagedata?.count > 2097152) {
+//            let oldSize: CGSize = image.size
+//            let newSize: CGSize = CGSize(width: 800, height: oldSize.height / oldSize.width * 800)
+//            imagedata = resizeImage(newSize, image: image)
+//        }
+//
+//        return imagedata!.base64EncodedString(options: .endLineWithCarriageReturn)
+//    }
     
-    func createRequest(with imageBase64: String) {
+    open func createRequest(with imageURL: URL) {
         // Create our request URL
-        
+        print("in vision class")
+        print("URL passed thru: " + imageURL.absoluteString)
         var request = URLRequest(url: googleURL)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -135,7 +136,7 @@ extension Vision {
         let jsonRequest = [
             "requests": [
                 "image": [
-                    "content": imageBase64
+                    "content": imageURL
                 ],
                 "features": [
                     [
@@ -149,6 +150,7 @@ extension Vision {
         
         // Serialize the JSON
         guard let data = try? jsonObject.rawData() else {
+            print("No data...")
             return
         }
         
@@ -160,7 +162,7 @@ extension Vision {
     
     func runRequestOnBackgroundThread(_ request: URLRequest) {
         // run the request
-        
+        print("running request")
         let task: URLSessionDataTask = session.dataTask(with: request) { (data, response, error) in
             guard let data = data, error == nil else {
                 print(error?.localizedDescription ?? "")

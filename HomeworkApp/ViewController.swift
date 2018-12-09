@@ -10,8 +10,10 @@ import UIKit
 
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    
+    var appdata = AppData.shared
     var imagePicker = UIImagePickerController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -94,7 +96,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             data.write(toFile: localPath!, atomically: true)
             //let imageData = NSData(contentsOfFile: localPath!)!
             let photoURL = URL.init(fileURLWithPath: localPath!)//NSURL(fileURLWithPath: localPath!)
-            print(photoURL)
+            self.appdata.imageURL = photoURL
+            print("got URL... getting api request")
+            Vision().createRequest(with: self.appdata.imageURL)
+            //print(photoURL)
         }
         self.dismiss(animated: true, completion: nil)
         guard let selectedImage = info[.originalImage] as? UIImage else {
