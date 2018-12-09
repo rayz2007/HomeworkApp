@@ -37,19 +37,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             selectImageFrom(.photoLibrary)
             return
         }
-        selectImageFrom(.camera)
-        /*if(UIImagePickerController .isSourceTypeAvailable(UIImagePickerController.SourceType.camera))
-        {
-            imagePicker.sourceType = UIImagePickerController.SourceType.camera
-            imagePicker.allowsEditing = true
-            self.present(imagePicker, animated: true, completion: nil)
-        }
-        else
-        {
-            let alert  = UIAlertController(title: "Warning", message: "You don't have camera", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        } */
+       
     }
     func selectImageFrom(_ source: ImageSource){
         imagePicker =  UIImagePickerController()
