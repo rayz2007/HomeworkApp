@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HomeworkApp/ViewController.swift"
-            timestampString = "566002538.912122"
+            timestampString = "566009693.347994"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "selectPhoto(_:)"
             landmarkType = "7">
          </BreakpointContent>
