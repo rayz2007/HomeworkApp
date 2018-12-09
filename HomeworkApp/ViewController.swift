@@ -98,7 +98,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             let photoURL = URL.init(fileURLWithPath: localPath!)//NSURL(fileURLWithPath: localPath!)
             self.appdata.imageURL = photoURL
             print("got URL... getting api request")
-            Vision().createRequest(with: self.appdata.imageURL)
+            
             //print(photoURL)
         }
         self.dismiss(animated: true, completion: nil)
@@ -106,7 +106,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             print("Image not found!")
             return
         }
+        
         imageTake.image = selectedImage
+        var imageData = Vision().base64EncodeImage(selectedImage)
+        Vision().createRequest(with: imageData)
+        
     }
 
 }
