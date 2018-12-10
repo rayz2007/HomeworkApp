@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,26 +20,62 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="aqP-Yd-jtU">
                                 <rect key="frame" x="94" y="280" width="187" height="107"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kjN-RG-DDz">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kjN-RG-DDz" customClass="RoundButton" customModule="HomeworkApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="187" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Uq3-2p-lrU"/>
                                         </constraints>
-                                        <state key="normal" title="TAKE A NEW PICTURE"/>
+                                        <color key="tintColor" red="0.44162759051443323" green="0.63658876322277591" blue="0.67616580310880825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="camera"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.59604179290000003" green="0.84602483839999998" blue="0.89762791450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="openCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IBq-Az-p3E"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F4T-I0-zjv">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F4T-I0-zjv" customClass="RoundButton" customModule="HomeworkApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="38" width="187" height="31"/>
-                                        <state key="normal" title="GO TO SAVED PHOTOS"/>
+                                        <color key="tintColor" red="0.42809111264425909" green="0.61707646396690541" blue="0.65544041450777202" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="select"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.59604179290000003" green="0.84602483839999998" blue="0.89762791450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="selectPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ANp-G2-aJg"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zlq-eb-Pk0">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zlq-eb-Pk0" customClass="RoundButton" customModule="HomeworkApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="77" width="187" height="30"/>
-                                        <state key="normal" title="GO TO SAVED EQUATIONS"/>
+                                        <color key="tintColor" red="0.39684088443616161" green="0.5720304918566731" blue="0.60759391191709844" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="History"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.59604179290000003" green="0.84602483839999998" blue="0.89762791450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="bG0-om-bbI" kind="show" id="BRI-Ph-BXl"/>
                                         </connections>
@@ -106,4 +142,9 @@
             <point key="canvasLocation" x="112" y="187"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="History" width="50" height="50"/>
+        <image name="camera" width="50" height="50"/>
+        <image name="select" width="50" height="50"/>
+    </resources>
 </document>
