@@ -27,6 +27,12 @@ class ResultsViewController: UIViewController {
     
     @IBOutlet weak var resultsBox: UITextView!
     
-
+    @IBAction func getAnswers(_ sender: Any) {
+        let storeAns = String(self.appdata.equationsArray[0])
+        self.appdata.history.append(storeAns)
+        
+        performSegue(withIdentifier: "getAnswers", sender: self)
+    }
+    
 
 }

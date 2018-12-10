@@ -15,5 +15,6 @@ class AppData: NSObject {
     open var imageURL : URL!
     var labelResults : String = ""
     var equationsArray : [String.SubSequence] = []
+    var history : [String] = []
 
 }

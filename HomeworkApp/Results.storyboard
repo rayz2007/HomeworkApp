@@ -49,7 +49,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Get Answer"/>
                                 <connections>
-                                    <segue destination="7t5-Zg-5mf" kind="show" id="op3-WC-ES3"/>
+                                    <action selector="getAnswers:" destination="k52-8u-JUm" eventType="touchUpInside" id="oka-0b-GJE"/>
+                                    <segue destination="7t5-Zg-5mf" kind="show" identifier="getAnswer" id="op3-WC-ES3"/>
                                 </connections>
                             </button>
                         </subviews>
