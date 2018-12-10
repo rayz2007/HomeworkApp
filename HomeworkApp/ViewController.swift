@@ -65,7 +65,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             return
         }
         let imageData = Vision().base64EncodeImage(selectedImage)
+
         Vision().createRequest(with: imageData)
+        performSegue(withIdentifier: "toResults", sender: self)
     }
     
     @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
