@@ -16,6 +16,7 @@
 		9D5B70ED21BDDBEC00886B5E /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5B70EC21BDDBEC00886B5E /* ResultsViewController.swift */; };
 		9D85C6667686108CE56519AF /* Pods_HomeworkApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B35144F1FE9C3DAF8C429D8F /* Pods_HomeworkApp.framework */; };
 		9DFAA17F21BE06CC00937CE3 /* WolframAlpha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFAA17E21BE06CC00937CE3 /* WolframAlpha.swift */; };
+		9DFAA18121BE091400937CE3 /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFAA18021BE091400937CE3 /* AnswerViewController.swift */; };
 		FE83054121BC73FB008BF111 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE83054021BC73FB008BF111 /* AppDelegate.swift */; };
 		FE83054321BC73FB008BF111 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE83054221BC73FB008BF111 /* ViewController.swift */; };
 		FE83054621BC73FB008BF111 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE83054421BC73FB008BF111 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 		9D5B70EA21BDDB4900886B5E /* Results.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Results.storyboard; sourceTree = "<group>"; };
 		9D5B70EC21BDDBEC00886B5E /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		9DFAA17E21BE06CC00937CE3 /* WolframAlpha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WolframAlpha.swift; sourceTree = "<group>"; };
+		9DFAA18021BE091400937CE3 /* AnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
 		B35144F1FE9C3DAF8C429D8F /* Pods_HomeworkApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeworkApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE83053D21BC73FB008BF111 /* HomeworkApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeworkApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE83054021BC73FB008BF111 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				6A303A8F21BDF8A60061FF82 /* History.storyboard */,
 				6A303A9121BDFB4F0061FF82 /* History.swift */,
 				9DFAA17E21BE06CC00937CE3 /* WolframAlpha.swift */,
+				9DFAA18021BE091400937CE3 /* AnswerViewController.swift */,
 			);
 			path = HomeworkApp;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				6A8A0D3E21BD21280030D203 /* Vision.swift in Sources */,
 				FE83054321BC73FB008BF111 /* ViewController.swift in Sources */,
 				9DFAA17F21BE06CC00937CE3 /* WolframAlpha.swift in Sources */,
+				9DFAA18121BE091400937CE3 /* AnswerViewController.swift in Sources */,
 				FE83054121BC73FB008BF111 /* AppDelegate.swift in Sources */,
 				9D5B70ED21BDDBEC00886B5E /* ResultsViewController.swift in Sources */,
 				6A303A8C21BDAEBA0061FF82 /* AppData.swift in Sources */,
