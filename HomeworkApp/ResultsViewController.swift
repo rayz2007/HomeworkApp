@@ -26,7 +26,9 @@ class ResultsViewController: UIViewController {
     
     @IBAction func printResults(_ sender: Any) {
         if (appdata.equationsArray.count != 0) {
-            self.resultsBox.text = String(appdata.equationsArray[0])
+            let getEqa = String(appdata.equationsArray[0])
+            let removeSpace = String(getEqa.filter{!" ".contains($0)})
+            self.resultsBox.text = removeSpace
             getAnswer.isEnabled = true
         }
     }
@@ -35,8 +37,9 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var resultsBox: UITextView!
     
     @IBAction func getAnswers(_ sender: Any) {
-        let storeAns = String(self.appdata.equationsArray[0])
-        self.appdata.history.append(storeAns)
+        let getEqa = String(appdata.equationsArray[0])
+        let removeSpace = String(getEqa.filter{!" ".contains($0)})
+        self.appdata.history.append(removeSpace)
         
         performSegue(withIdentifier: "getAnswer", sender: self)
     }
