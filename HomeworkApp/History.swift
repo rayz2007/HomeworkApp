@@ -27,6 +27,10 @@ class History: UIViewController, UITableViewDelegate, UITableViewDataSource  {
         return cell!
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.appdata.equationsArray[0] = Substring(self.appdata.history[indexPath.row])
+        performSegue(withIdentifier: "getResults", sender: self)
+    }
 
     
     
