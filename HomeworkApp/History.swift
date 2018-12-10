@@ -13,7 +13,7 @@ class History: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     var appdata = AppData.shared
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return appdata.equationsArray.count
+        return appdata.history.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -22,9 +22,7 @@ class History: UIViewController, UITableViewDelegate, UITableViewDataSource  {
             NSLog("Creating new UITableViewCell")
             cell = UITableViewCell(style: .value1, reuseIdentifier: "NameTableIdentifier")
         }
-//        cell?.textLabel?.text = appdata.dictionary[indexPath.row].title
-//        cell?.detailTextLabel?.text = appdata.dictionary[indexPath.row].desc
-//        cell?.imageView?.image = UIImage(named: appdata.img[indexPath.row])
+        cell?.textLabel?.text = self.appdata.history[indexPath.row]
 
         return cell!
     }
@@ -36,6 +34,8 @@ class History: UIViewController, UITableViewDelegate, UITableViewDataSource  {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        tableView.dataSource = self
+        tableView.delegate = self
     }
     
     @IBOutlet weak var tableView: UITableView!
