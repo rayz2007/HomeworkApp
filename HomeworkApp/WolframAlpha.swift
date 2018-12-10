@@ -34,7 +34,7 @@ class WolframAlpha: UIViewController, XMLParserDelegate {
         // print(appdata.labelResults)
         // self.resultsBox.text = appdata.labelResults
         super.viewDidLoad()
-        //getAnswer.isEnabled = false
+        getAnswer.isEnabled = false
         textField.isUserInteractionEnabled = false
         self.resultsBox.text = inputData
         // Do any additional setup after loading the view.
@@ -45,7 +45,13 @@ class WolframAlpha: UIViewController, XMLParserDelegate {
         if (appdata.equationsArray.count != 0) {
             self.resultsBox.text = String(appdata.equationsArray[0])
             getAnswer.isEnabled = true
+            textField.isUserInteractionEnabled = true
+        } else {
+            let errorAlert = UIAlertController(title: "Error", message: "No Equations Found", preferredStyle: .alert)
+            errorAlert.addAction(UIAlertAction(title: "Exit", style: .default, handler: nil))
+            self.present(errorAlert, animated: true, completion: nil)
         }
+        
     }
     
     @IBAction func getAnswers(_ sender: Any) {

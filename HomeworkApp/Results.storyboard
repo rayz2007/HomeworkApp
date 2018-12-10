@@ -17,29 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Problem" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5O-NN-ped">
-                                <rect key="frame" x="65" y="52" width="250" height="86"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gz0-uV-gxL">
-                                <rect key="frame" x="140" y="438" width="102" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Solve Different"/>
-                                <connections>
-                                    <segue destination="byJ-Nw-hi0" kind="show" id="xcA-ay-lI2"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q4E-5N-OZT">
-                                <rect key="frame" x="143" y="113" width="95" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Load Problem"/>
-                                <connections>
-                                    <action selector="printResults:" destination="k52-8u-JUm" eventType="touchUpInside" id="w2y-Qd-wKn"/>
-                                </connections>
-                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GmN-gZ-3Xt">
                                 <rect key="frame" x="65" y="146" width="240" height="193"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -56,6 +33,34 @@
                                 <state key="normal" title="Get Answer"/>
                                 <connections>
                                     <action selector="getAnswers:" destination="k52-8u-JUm" eventType="touchUpInside" id="oka-0b-GJE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q4E-5N-OZT" customClass="RoundButton" customModule="HomeworkApp" customModuleProvider="target">
+                                <rect key="frame" x="153" y="68" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.59604179290000003" green="0.84602483839999998" blue="0.89762791450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="play"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="35"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.59604179290000003" green="0.84602483839999998" blue="0.89762791450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="printResults:" destination="k52-8u-JUm" eventType="touchUpInside" id="w2y-Qd-wKn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gz0-uV-gxL">
+                                <rect key="frame" x="168" y="437" width="41" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Home"/>
+                                <connections>
+                                    <segue destination="byJ-Nw-hi0" kind="show" id="xcA-ay-lI2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -112,9 +117,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9r-7J-2bH">
-                                <rect key="frame" x="136" y="540" width="102" height="30"/>
+                                <rect key="frame" x="167" y="540" width="41" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Solve DIfferent"/>
+                                <state key="normal" title="Home"/>
                                 <connections>
                                     <segue destination="byJ-Nw-hi0" kind="show" id="G0O-Pk-KEq"/>
                                 </connections>
@@ -174,8 +179,11 @@
             <point key="canvasLocation" x="1869.5999999999999" y="-403.44827586206901"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="play" width="50" height="50"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1nn-hd-VDM"/>
+        <segue reference="pNh-KV-jBz"/>
         <segue reference="G0O-Pk-KEq"/>
     </inferredMetricsTieBreakers>
 </document>
