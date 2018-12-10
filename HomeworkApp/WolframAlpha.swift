@@ -18,8 +18,41 @@ class WolframAlpha: UIViewController, XMLParserDelegate {
     var resultsSeen = false
     var steps = ""
     
+//    var wolframURL: URL {
+//        return URL(string: "http://api.wolframalpha.com/v2/query?appid=\(wolframAPI)&input=\(appdata.labelResults)&podstate=Result__Step-by-step+solution&format=plaintext")!
+//    }
+    
     var wolframURL: URL {
-        return URL(string: "http://api.wolframalpha.com/v2/query?appid=\(wolframAPI)&input=\(appdata.labelResults)&podstate=Result__Step-by-step+solution&format=plaintext")!
+        return URL(string: "http://api.wolframalpha.com/v2/query?appid=8TTTK2-J7V3W3EWY8&input=solve+3x-7%3D11&podstate=Result__Step-by-step+solution&format=plaintext")!
+    }
+    
+    var inputData = ""
+    @IBOutlet weak var textField: UITextView!
+    @IBOutlet weak var getAnswer: UIButton!
+    @IBOutlet weak var resultsBox: UITextView!
+    override func viewDidLoad() {
+        // print(appdata.labelResults)
+        // self.resultsBox.text = appdata.labelResults
+        super.viewDidLoad()
+        //getAnswer.isEnabled = false
+        textField.isUserInteractionEnabled = false
+        self.resultsBox.text = inputData
+        // Do any additional setup after loading the view.
+        
+    }
+    
+    @IBAction func printResults(_ sender: Any) {
+        if (appdata.equationsArray.count != 0) {
+            self.resultsBox.text = String(appdata.equationsArray[0])
+            getAnswer.isEnabled = true
+        }
+    }
+    
+    @IBAction func getAnswers(_ sender: Any) {
+//        let storeAns = String(self.appdata.equationsArray[0])
+//        self.appdata.history.append(storeAns)
+        
+        self.createRequest()
     }
     
     open func createRequest() {
@@ -67,7 +100,7 @@ class WolframAlpha: UIViewController, XMLParserDelegate {
     func parserDidEndDocument(_ parser: XMLParser) {
         DispatchQueue.main.async {
             self.appdata.steps = self.steps.components(separatedBy: "\n")
-            //Perform segue
+            self.performSegue(withIdentifier: "getAnswers", sender: self)
         }
     }
     
