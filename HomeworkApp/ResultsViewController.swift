@@ -12,16 +12,20 @@ class ResultsViewController: UIViewController {
     var appdata = AppData.shared
 
     override func viewDidLoad() {
-        print(appdata.labelResults)
-        self.resultsBox.text = appdata.labelResults
+       // print(appdata.labelResults)
+       // self.resultsBox.text = appdata.labelResults
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
     }
     
-    @IBOutlet weak var resultsBox: UILabel!
+    @IBAction func printResults(_ sender: Any) {
+        self.resultsBox.text = String(appdata.equationsArray[0])
+    }
+
     
+    @IBOutlet weak var resultsBox: UITextView!
     
 
 

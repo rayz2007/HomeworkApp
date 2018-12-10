@@ -75,6 +75,7 @@ extension Vision {
                         }
                     }
                     self.appdata.labelResults = labelResultsText
+                    
                 } else {
                     self.appdata.labelResults = "No texts found"
                 }
@@ -143,6 +144,9 @@ extension Vision {
                         "type": "DOCUMENT_TEXT_DETECTION",
                         "maxResults": 10
                     ]
+                ],
+                "imageContext": [
+                    "languageHints": ["en-t-i0-handwrit"]
                 ]
             ]
         ]
