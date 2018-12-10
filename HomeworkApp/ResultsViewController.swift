@@ -38,7 +38,7 @@ class ResultsViewController: UIViewController {
         let storeAns = String(self.appdata.equationsArray[0])
         self.appdata.history.append(storeAns)
         
-        performSegue(withIdentifier: "getAnswers", sender: self)
+        performSegue(withIdentifier: "getAnswer", sender: self)
     }
     
 
