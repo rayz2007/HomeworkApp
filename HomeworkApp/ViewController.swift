@@ -14,10 +14,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     var appdata = AppData.shared
     var imagePicker = UIImagePickerController()
     
+    @IBOutlet weak var useButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the vie, typically from a nib.
         imagePicker.delegate = self
+        self.useButton.isEnabled = false
     }
     enum ImageSource {
         case photoLibrary
@@ -108,7 +110,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         
         imageTake.image = selectedImage
-        
+        useButton.isEnabled = true
     }
 
 }
