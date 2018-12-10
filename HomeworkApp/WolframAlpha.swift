@@ -100,6 +100,7 @@ class WolframAlpha: UIViewController, XMLParserDelegate {
     func parserDidEndDocument(_ parser: XMLParser) {
         DispatchQueue.main.async {
             self.appdata.steps = self.steps.components(separatedBy: "\n")
+            self.appdata.completeSteps = self.steps
             self.performSegue(withIdentifier: "getAnswers", sender: self)
         }
     }
