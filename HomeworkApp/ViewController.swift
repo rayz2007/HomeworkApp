@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SwiftyJSON
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -37,6 +37,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             selectImageFrom(.photoLibrary)
             return
         }
+        selectImageFrom(.camera)
        
     }
     func selectImageFrom(_ source: ImageSource){
@@ -65,7 +66,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             return
         }
         let imageData = Vision().base64EncodeImage(selectedImage)
-
         Vision().createRequest(with: imageData)
         performSegue(withIdentifier: "toResults", sender: self)
     }
