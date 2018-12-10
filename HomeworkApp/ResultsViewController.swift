@@ -10,7 +10,7 @@ import UIKit
 
 class ResultsViewController: UIViewController {
     var appdata = AppData.shared
-
+    var inputData = ""
     @IBOutlet weak var textField: UITextView!
     @IBOutlet weak var getAnswer: UIButton!
     override func viewDidLoad() {
@@ -19,6 +19,7 @@ class ResultsViewController: UIViewController {
         super.viewDidLoad()
         getAnswer.isEnabled = false
         textField.isUserInteractionEnabled = false
+        self.resultsBox.text = inputData
         // Do any additional setup after loading the view.
         
     }
