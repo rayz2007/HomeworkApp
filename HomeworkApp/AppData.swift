@@ -16,5 +16,6 @@ class AppData: NSObject {
     var labelResults : String = ""
     var equationsArray : [String.SubSequence] = []
     var history : [String] = []
+    var steps : [String] = []
 
 }
