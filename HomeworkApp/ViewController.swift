@@ -37,6 +37,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             selectImageFrom(.photoLibrary)
             return
         }
+        selectImageFrom(.camera)
        
     }
     func selectImageFrom(_ source: ImageSource){
