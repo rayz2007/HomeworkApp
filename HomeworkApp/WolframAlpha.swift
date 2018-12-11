@@ -22,9 +22,10 @@ class WolframAlpha: UIViewController, XMLParserDelegate {
 //        return URL(string: "http://api.wolframalpha.com/v2/query?appid=\(wolframAPI)&input=\(appdata.labelResults)&podstate=Result__Step-by-step+solution&format=plaintext")!
 //    }
     
-    var wolframURL: URL {
-        return URL(string: "http://api.wolframalpha.com/v2/query?appid=8TTTK2-J7V3W3EWY8&input=solve+3x-7%3D11&podstate=Result__Step-by-step+solution&format=plaintext")!
-    }
+    var wolframURL: URL!
+//    {
+//        return URL(string: "http://api.wolframalpha.com/v2/query?appid=8TTTK2-J7V3W3EWY8&input=solve+3x-7%3D11&podstate=Result__Step-by-step+solution&format=plaintext")!
+//    }
     
     var inputData = ""
     @IBOutlet weak var textField: UITextView!
@@ -46,18 +47,29 @@ class WolframAlpha: UIViewController, XMLParserDelegate {
             self.resultsBox.text = String(appdata.equationsArray[0])
             getAnswer.isEnabled = true
             textField.isUserInteractionEnabled = true
+            
         } else {
             let errorAlert = UIAlertController(title: "Error", message: "No Equations Found", preferredStyle: .alert)
             errorAlert.addAction(UIAlertAction(title: "Exit", style: .default, handler: nil))
             self.present(errorAlert, animated: true, completion: nil)
         }
         
+        
     }
     
     @IBAction func getAnswers(_ sender: Any) {
-//        let storeAns = String(self.appdata.equationsArray[0])
-//        self.appdata.history.append(storeAns)
+        print(self.resultsBox.text)
+        let results = self.resultsBox.text
+        let removePlus = results?.replacingOccurrences(of: "+", with: "%2b")
+        let removeStart = removePlus?.replacingOccurrences(of: "|", with: " ")
+        let ans = String(removeStart!.filter{!" ".contains($0)})
+        appdata.equationsArray[0] = Substring(ans.lowercased())
         
+        let storeAns = String(self.appdata.equationsArray[0])
+        print(storeAns)
+        self.appdata.history.append(storeAns)
+        
+        wolframURL = URL(string: "http://api.wolframalpha.com/v2/query?input=solve+\(storeAns)&appid=AWVGKJ-8X4K3345QT&podstate=Result__Step-by-step+solution")!
         self.createRequest()
     }
     
@@ -106,6 +118,7 @@ class WolframAlpha: UIViewController, XMLParserDelegate {
     func parserDidEndDocument(_ parser: XMLParser) {
         DispatchQueue.main.async {
             self.appdata.steps = self.steps.components(separatedBy: "\n")
+            print(dump(self.appdata.steps))
             self.appdata.completeSteps = self.steps
             self.performSegue(withIdentifier: "getAnswers", sender: self)
         }

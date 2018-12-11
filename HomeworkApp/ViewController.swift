@@ -71,16 +71,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         Vision().createRequest(with: imageData)
         performSegue(withIdentifier: "toResults", sender: self)
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "toResults") {
-            if (AppData.shared.equationsArray.count != 0) {
-                let info = AppData.shared.equationsArray[0]
-                let vc = segue.destination as! ResultsViewController
-                vc.inputData = String(info)
-            }
-            
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if (segue.identifier == "toResults") {
+//            if (AppData.shared.equationsArray.count != 0) {
+//                let info = AppData.shared.equationsArray[0]
+//                let vc = segue.destination as! ResultsViewController
+//                vc.inputData = String(info)
+//            }
+//            
+//        }
+//    }
     
     @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
         if let error = error {
