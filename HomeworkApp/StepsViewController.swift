@@ -15,7 +15,7 @@ class StepsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //stepsView.isUserInteractionEnabled = false
         stepsView.text = appdata.completeSteps
     }
 

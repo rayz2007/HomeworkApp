@@ -15,6 +15,7 @@ class AnswerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ResultView.isUserInteractionEnabled = false
         ResultView.text = appdata.steps[appdata.steps.count - 1]
         print("get ans")
         print(appdata.steps[appdata.steps.count - 1])
